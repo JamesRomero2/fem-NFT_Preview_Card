@@ -1,0 +1,114 @@
+@use '../util' as *;
+
+.card {
+    padding: rem(18) rem(18);
+    background-color: var(--dark-bg-card);
+    width: rem(327);
+    height: rem(520);
+    border-radius: rem(10);
+    margin: 0 auto;
+    color: var(--softBlue);
+    box-shadow: 0 0 rem(24) var(--dark-bg);
+
+    .cardImage {
+        background: url(/images/image-equilibrium.jpg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        border-radius: rem(10);
+        width: 100%;
+        height: rem(290);
+        cursor: pointer;
+
+        .colorOverlay {
+            border-radius: rem(10);
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+
+            img {
+                display: none;
+                width: 20%;
+                height: 20%;
+            }
+        }
+
+        &:hover {
+            .colorOverlay {
+                background: rgba($color: #00FFF7, $alpha: .3);
+            }
+
+            img {
+                display: block;
+            }
+        }
+    }
+
+    .cardTitle {
+        font-weight: 600;
+        margin: rem(10) 0;
+        color: var(--white);
+
+        &:hover {
+            color: var(--cyan);
+            cursor: pointer;
+        }
+    }
+
+    .cardDescription {
+        font-weight: 300;
+        margin: rem(10) 0;
+    }
+
+    .cardDetails {
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+
+        img {
+            height: rem(20);
+            margin-right: rem(10);
+        }
+
+        .cardPrice {
+            display: flex;
+            color: var(--cyan);
+            font-weight: 600;
+        }
+
+        .cardTimer {
+            display: flex;
+        }
+    }
+
+    .cardLine {
+        border: rem(1) solid var(--dark-line);
+        margin: rem(24) 0;
+    }
+
+    .cardAuthor {
+        display: flex;
+        align-items: center;
+
+        img {
+            width: 10%;
+            border: rem(1) solid var(--white);
+            border-radius: 50%;
+        }
+        span {
+            margin: 0 rem(16);
+
+            a {
+                color: var(--softBlue);
+            }
+
+            a:hover {
+                color: var(--cyan);
+            }
+        }
+    }
+
+}
